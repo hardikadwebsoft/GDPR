@@ -23,3 +23,16 @@ D:\hiral\TestGDPR\newangular\obj\Debug\net8.0\GDPRTestProject.Data.dll
 D:\hiral\TestGDPR\newangular\obj\Debug\net8.0\refint\GDPRTestProject.Data.dll
 D:\hiral\TestGDPR\newangular\obj\Debug\net8.0\GDPRTestProject.Data.pdb
 D:\hiral\TestGDPR\newangular\obj\Debug\net8.0\ref\GDPRTestProject.Data.dll
+D:\hiral\TestGDPR\GDPRTestProject\bin\Debug\net8.0\GDPRTestProject.Data.deps.json
+D:\hiral\TestGDPR\GDPRTestProject\bin\Debug\net8.0\GDPRTestProject.Data.dll
+D:\hiral\TestGDPR\GDPRTestProject\bin\Debug\net8.0\GDPRTestProject.Data.pdb
+D:\hiral\TestGDPR\GDPRTestProject\obj\Debug\net8.0\GDPRTestProject.Data.csproj.AssemblyReference.cache
+D:\hiral\TestGDPR\GDPRTestProject\obj\Debug\net8.0\GDPRTestProject.Data.GeneratedMSBuildEditorConfig.editorconfig
+D:\hiral\TestGDPR\GDPRTestProject\obj\Debug\net8.0\GDPRTestProject.Data.AssemblyInfoInputs.cache
+D:\hiral\TestGDPR\GDPRTestProject\obj\Debug\net8.0\GDPRTestProject.Data.AssemblyInfo.cs
+D:\hiral\TestGDPR\GDPRTestProject\obj\Debug\net8.0\GDPRTestProject.Data.csproj.CoreCompileInputs.cache
+D:\hiral\TestGDPR\GDPRTestProject\obj\Debug\net8.0\GDPRTestProject.Data.sourcelink.json
+D:\hiral\TestGDPR\GDPRTestProject\obj\Debug\net8.0\GDPRTestProject.Data.dll
+D:\hiral\TestGDPR\GDPRTestProject\obj\Debug\net8.0\refint\GDPRTestProject.Data.dll
+D:\hiral\TestGDPR\GDPRTestProject\obj\Debug\net8.0\GDPRTestProject.Data.pdb
+D:\hiral\TestGDPR\GDPRTestProject\obj\Debug\net8.0\ref\GDPRTestProject.Data.dll

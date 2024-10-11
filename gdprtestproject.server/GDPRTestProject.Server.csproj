@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
@@ -21,11 +21,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\newangular.client\GDPRTestProject.client.esproj" />
-    <ProjectReference Include="..\newangular.Model\GDPRTestProject.Model.csproj" />
-    <ProjectReference Include="..\newangular.Services\GDPRTestProject.Services.csproj" />
-    <ProjectReference Include="..\newangular\GDPRTestProject.Data.csproj" />
+    <ProjectReference Include="..\GDPRTestProject.Model\GDPRTestProject.Model.csproj" />
+    <ProjectReference Include="..\GDPRTestProject.Services\GDPRTestProject.Services.csproj" />
+    <ProjectReference Include="..\GDPRTestProject\GDPRTestProject.Data.csproj" />
   </ItemGroup>
 
- 
 </Project>

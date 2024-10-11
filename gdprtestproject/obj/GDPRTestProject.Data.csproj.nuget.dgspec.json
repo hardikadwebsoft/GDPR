@@ -31,11 +31,7 @@
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
-            "projectReferences": {
-              "D:\\hiral\\TestGDPR\\newangular.client\\GDPRTestProject.client.esproj": {
-                "projectPath": "D:\\hiral\\TestGDPR\\newangular.client\\GDPRTestProject.client.esproj"
-              }
-            }
+            "projectReferences": {}
           }
         },
         "warningProperties": {
@@ -76,21 +72,6 @@
           },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
         }
-      }
-    },
-    "D:\\hiral\\TestGDPR\\newangular.client\\GDPRTestProject.client.esproj": {
-      "restore": {
-        "projectUniqueName": "D:\\hiral\\TestGDPR\\newangular.client\\GDPRTestProject.client.esproj",
-        "projectName": "GDPRTestProject.client",
-        "projectPath": "D:\\hiral\\TestGDPR\\newangular.client\\GDPRTestProject.client.esproj",
-        "frameworks": {
-          "net472": {
-            "projectReferences": {}
-          }
-        }
-      },
-      "frameworks": {
-        "net472": {}
       }
     }
   }

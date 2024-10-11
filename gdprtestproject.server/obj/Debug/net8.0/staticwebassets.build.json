@@ -1,23 +1,11 @@
 {
   "Version": 1,
-  "Hash": "RTFK6ujEf9//aRssHCPIb8LGVPZRIE5bN9D8AOFUJjs=",
+  "Hash": "y3aPw3z2cdW0uDbrSOZPDvQ/0qSzgkY1qUBv/TZVecU=",
   "Source": "GDPRTestProject.Server",
   "BasePath": "_content/GDPRTestProject.Server",
   "Mode": "Default",
   "ManifestType": "Build",
-  "ReferencedProjectsConfiguration": [
-    {
-      "Identity": "D:\\hiral\\TestGDPR\\newangular.client\\GDPRTestProject.client.esproj",
-      "Version": 2,
-      "Source": "GDPRTestProject.client",
-      "GetPublishAssetsTargets": "GetCurrentProjectPublishStaticWebAssetItems",
-      "AdditionalPublishProperties": "Configuration=Debug;Platform=AnyCPU",
-      "AdditionalPublishPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier;SelfContained",
-      "GetBuildAssetsTargets": "GetCurrentProjectBuildStaticWebAssetItems",
-      "AdditionalBuildProperties": "Configuration=Debug;Platform=AnyCPU",
-      "AdditionalBuildPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier;SelfContained"
-    }
-  ],
+  "ReferencedProjectsConfiguration": [],
   "DiscoveryPatterns": [],
   "Assets": []
 }

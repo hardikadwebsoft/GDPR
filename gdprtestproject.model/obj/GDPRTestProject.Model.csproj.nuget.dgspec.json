@@ -32,11 +32,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\hiral\\TestGDPR\\newangular.client\\GDPRTestProject.client.esproj": {
-                "projectPath": "D:\\hiral\\TestGDPR\\newangular.client\\GDPRTestProject.client.esproj"
-              },
-              "D:\\hiral\\TestGDPR\\newangular\\GDPRTestProject.Data.csproj": {
-                "projectPath": "D:\\hiral\\TestGDPR\\newangular\\GDPRTestProject.Data.csproj"
+              "D:\\hiral\\TestGDPR\\GDPRTestProject\\GDPRTestProject.Data.csproj": {
+                "projectPath": "D:\\hiral\\TestGDPR\\GDPRTestProject\\GDPRTestProject.Data.csproj"
               }
             }
           }
@@ -81,29 +78,14 @@
         }
       }
     },
-    "D:\\hiral\\TestGDPR\\newangular.client\\GDPRTestProject.client.esproj": {
-      "restore": {
-        "projectUniqueName": "D:\\hiral\\TestGDPR\\newangular.client\\GDPRTestProject.client.esproj",
-        "projectName": "GDPRTestProject.client",
-        "projectPath": "D:\\hiral\\TestGDPR\\newangular.client\\GDPRTestProject.client.esproj",
-        "frameworks": {
-          "net472": {
-            "projectReferences": {}
-          }
-        }
-      },
-      "frameworks": {
-        "net472": {}
-      }
-    },
-    "D:\\hiral\\TestGDPR\\newangular\\GDPRTestProject.Data.csproj": {
+    "D:\\hiral\\TestGDPR\\GDPRTestProject\\GDPRTestProject.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\hiral\\TestGDPR\\newangular\\GDPRTestProject.Data.csproj",
+        "projectUniqueName": "D:\\hiral\\TestGDPR\\GDPRTestProject\\GDPRTestProject.Data.csproj",
         "projectName": "GDPRTestProject.Data",
-        "projectPath": "D:\\hiral\\TestGDPR\\newangular\\GDPRTestProject.Data.csproj",
+        "projectPath": "D:\\hiral\\TestGDPR\\GDPRTestProject\\GDPRTestProject.Data.csproj",
         "packagesPath": "C:\\Users\\adweb\\.nuget\\packages\\",
-        "outputPath": "D:\\hiral\\TestGDPR\\newangular\\obj\\",
+        "outputPath": "D:\\hiral\\TestGDPR\\GDPRTestProject\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -123,11 +105,7 @@
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
-            "projectReferences": {
-              "D:\\hiral\\TestGDPR\\newangular.client\\GDPRTestProject.client.esproj": {
-                "projectPath": "D:\\hiral\\TestGDPR\\newangular.client\\GDPRTestProject.client.esproj"
-              }
-            }
+            "projectReferences": {}
           }
         },
         "warningProperties": {

@@ -12,7 +12,6 @@
           "GDPRTestProject.Data": "1.0.0",
           "GDPRTestProject.Model": "1.0.0",
           "GDPRTestProject.Services": "1.0.0",
-          "GDPRTestProject.client": "1.0.0",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "8.0.10",
           "Microsoft.AspNetCore.SpaProxy": "8.0.10",
           "MongoDB.Driver": "2.29.0",
@@ -342,7 +341,6 @@
       },
       "GDPRTestProject.Data/1.0.0": {
         "dependencies": {
-          "GDPRTestProject.client": "1.0.0",
           "MongoDB.Driver": "2.29.0"
         },
         "runtime": {
@@ -352,7 +350,6 @@
       "GDPRTestProject.Model/1.0.0": {
         "dependencies": {
           "GDPRTestProject.Data": "1.0.0",
-          "GDPRTestProject.client": "1.0.0",
           "MongoDB.Driver": "2.29.0"
         },
         "runtime": {
@@ -364,7 +361,6 @@
           "BCrypt.Net-Next": "4.0.3",
           "GDPRTestProject.Data": "1.0.0",
           "GDPRTestProject.Model": "1.0.0",
-          "GDPRTestProject.client": "1.0.0",
           "Microsoft.Extensions.Options": "8.0.2"
         },
         "runtime": {

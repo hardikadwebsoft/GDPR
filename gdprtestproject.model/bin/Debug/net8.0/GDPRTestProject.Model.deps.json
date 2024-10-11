@@ -9,7 +9,6 @@
       "GDPRTestProject.Model/1.0.0": {
         "dependencies": {
           "GDPRTestProject.Data": "1.0.0",
-          "GDPRTestProject.client": "1.0.0",
           "MongoDB.Driver": "2.29.0"
         },
         "runtime": {
@@ -167,7 +166,6 @@
       },
       "GDPRTestProject.Data/1.0.0": {
         "dependencies": {
-          "GDPRTestProject.client": "1.0.0",
           "MongoDB.Driver": "2.29.0"
         },
         "runtime": {

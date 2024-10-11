@@ -296,15 +296,6 @@
         "runtime": {
           "lib/net7.0/ZstdSharp.dll": {}
         }
-      },
-      "GDPRTestProject.client/1.0.0": {
-        "type": "project",
-        "compile": {
-          "bin/placeholder/GDPRTestProject.client.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/GDPRTestProject.client.dll": {}
-        }
       }
     }
   },
@@ -793,16 +784,10 @@
         "zstdsharp.port.0.7.3.nupkg.sha512",
         "zstdsharp.port.nuspec"
       ]
-    },
-    "GDPRTestProject.client/1.0.0": {
-      "type": "project",
-      "path": "../newangular.client/GDPRTestProject.client.esproj",
-      "msbuildProject": "../newangular.client/GDPRTestProject.client.esproj"
     }
   },
   "projectFileDependencyGroups": {
     "net8.0": [
-      "GDPRTestProject.client >= 1.0.0",
       "MongoDB.Driver >= 2.29.0"
     ]
   },
@@ -837,11 +822,7 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
-          "projectReferences": {
-            "D:\\hiral\\TestGDPR\\newangular.client\\GDPRTestProject.client.esproj": {
-              "projectPath": "D:\\hiral\\TestGDPR\\newangular.client\\GDPRTestProject.client.esproj"
-            }
-          }
+          "projectReferences": {}
         }
       },
       "warningProperties": {

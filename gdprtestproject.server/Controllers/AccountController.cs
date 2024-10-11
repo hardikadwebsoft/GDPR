@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using newangular.Model.FormModel;
 using newangular.Services.IRepository;
-using NewAngular.Server.Model;
 using System.Threading.Tasks;
 
 namespace NewAngular.Server.Controllers

@@ -362,20 +362,10 @@
           "lib/net7.0/ZstdSharp.dll": {}
         }
       },
-      "GDPRTestProject.client/1.0.0": {
-        "type": "project",
-        "compile": {
-          "bin/placeholder/GDPRTestProject.client.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/GDPRTestProject.client.dll": {}
-        }
-      },
       "GDPRTestProject.Data/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
-          "GDPRTestProject.client": "1.0.0",
           "MongoDB.Driver": "2.29.0"
         },
         "compile": {
@@ -390,7 +380,6 @@
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
           "GDPRTestProject.Data": "1.0.0",
-          "GDPRTestProject.client": "1.0.0",
           "MongoDB.Driver": "2.29.0"
         },
         "compile": {
@@ -1028,20 +1017,15 @@
         "zstdsharp.port.nuspec"
       ]
     },
-    "GDPRTestProject.client/1.0.0": {
-      "type": "project",
-      "path": "../newangular.client/GDPRTestProject.client.esproj",
-      "msbuildProject": "../newangular.client/GDPRTestProject.client.esproj"
-    },
     "GDPRTestProject.Data/1.0.0": {
       "type": "project",
-      "path": "../newangular/GDPRTestProject.Data.csproj",
-      "msbuildProject": "../newangular/GDPRTestProject.Data.csproj"
+      "path": "../GDPRTestProject/GDPRTestProject.Data.csproj",
+      "msbuildProject": "../GDPRTestProject/GDPRTestProject.Data.csproj"
     },
     "GDPRTestProject.Model/1.0.0": {
       "type": "project",
-      "path": "../newangular.Model/GDPRTestProject.Model.csproj",
-      "msbuildProject": "../newangular.Model/GDPRTestProject.Model.csproj"
+      "path": "../GDPRTestProject.Model/GDPRTestProject.Model.csproj",
+      "msbuildProject": "../GDPRTestProject.Model/GDPRTestProject.Model.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -1049,7 +1033,6 @@
       "BCrypt.Net-Next >= 4.0.3",
       "GDPRTestProject.Data >= 1.0.0",
       "GDPRTestProject.Model >= 1.0.0",
-      "GDPRTestProject.client >= 1.0.0",
       "Microsoft.Extensions.Options >= 8.0.2"
     ]
   },
@@ -1085,14 +1068,11 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "D:\\hiral\\TestGDPR\\newangular.client\\GDPRTestProject.client.esproj": {
-              "projectPath": "D:\\hiral\\TestGDPR\\newangular.client\\GDPRTestProject.client.esproj"
+            "D:\\hiral\\TestGDPR\\GDPRTestProject.Model\\GDPRTestProject.Model.csproj": {
+              "projectPath": "D:\\hiral\\TestGDPR\\GDPRTestProject.Model\\GDPRTestProject.Model.csproj"
             },
-            "D:\\hiral\\TestGDPR\\newangular.Model\\GDPRTestProject.Model.csproj": {
-              "projectPath": "D:\\hiral\\TestGDPR\\newangular.Model\\GDPRTestProject.Model.csproj"
-            },
-            "D:\\hiral\\TestGDPR\\newangular\\GDPRTestProject.Data.csproj": {
-              "projectPath": "D:\\hiral\\TestGDPR\\newangular\\GDPRTestProject.Data.csproj"
+            "D:\\hiral\\TestGDPR\\GDPRTestProject\\GDPRTestProject.Data.csproj": {
+              "projectPath": "D:\\hiral\\TestGDPR\\GDPRTestProject\\GDPRTestProject.Data.csproj"
             }
           }
         }

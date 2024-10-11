@@ -12,12 +12,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\newangular.client\GDPRTestProject.client.esproj" />
-    <ProjectReference Include="..\newangular.Model\GDPRTestProject.Model.csproj" />
-    <ProjectReference Include="..\newangular\GDPRTestProject.Data.csproj" />
+    <ProjectReference Include="..\GDPRTestProject.Model\GDPRTestProject.Model.csproj" />
+    <ProjectReference Include="..\GDPRTestProject\GDPRTestProject.Data.csproj" />
   </ItemGroup>
-
-
- 
 
 </Project>
