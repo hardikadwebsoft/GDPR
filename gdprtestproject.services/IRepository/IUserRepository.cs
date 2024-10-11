@@ -9,7 +9,6 @@ namespace newangular.Services.IRepository
 {
     public interface IUserRepository 
     {
-        Task<IEnumerable<User>> GetAllUsersAsync();
         Task<User> GetUserByIdAsync(string id);
         Task AddUserAsync(User user);
         Task UpdateUserAsync(string id, User user);

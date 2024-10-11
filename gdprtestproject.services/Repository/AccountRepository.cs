@@ -1,4 +1,5 @@
-﻿using MongoDB.Driver;
+﻿using GDPRTestProject.Services.Helper;
+using MongoDB.Driver;
 using newangular.Services.IRepository;
 using NewAngular.Server.Model;
 using System;
@@ -20,8 +21,10 @@ namespace newangular.Services.Repository
         }
         public async Task<User> LoginAsync(string email, string password)
         {
+            
             // Find user by email
             var user = await _usersCollection.Find(u => u.Email == email).FirstOrDefaultAsync();
+            password = CommonMethod.HashPassword(password);
             if (user != null && user.Password == password)
             {
                 return user; // Return the user if the password is correct

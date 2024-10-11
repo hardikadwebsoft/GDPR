@@ -8,6 +8,7 @@ import { ChangeDetectorRef } from '@angular/core'; // Import the Profile model (
 @Component({
   selector: 'app-user',
   templateUrl: './user.component.html',
+  styleUrls: ['./user.component.css']
 })
 export class UserComponent implements OnInit {
   userrequest: User = {
@@ -65,21 +66,17 @@ export class UserComponent implements OnInit {
   }
 
   logMessage(): void {
-    debugger;
     console.log('Test button clicked!');
   }
 
   toggleEdit(): void {
-    debugger;
     this.isEditing = !this.isEditing;
   }
 
   // Save updated profile
   saveProfile(): void {
-    debugger;
     this.usersService.updateProfile(this.userrequest).subscribe({
       next: () => {
-        debugger;
         console.log('Profile updated successfully');
         this.isEditing = false;
       },
@@ -92,10 +89,8 @@ export class UserComponent implements OnInit {
   // Delete profile
   deleteProfile(): void {
     if (confirm('Are you sure you want to delete your profile?')) {
-      debugger;
       this.usersService.deleteProfile(this.userrequest).subscribe({
         next: () => {
-          debugger;
           console.log('Profile deleted successfully');
           this.router.navigate(['/login']); // Redirect after deletion
         },

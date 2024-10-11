@@ -17,12 +17,7 @@ public class UserController : ControllerBase
         _userRepository = userRepository;
     }
 
-    [HttpGet]
-    public async Task<IEnumerable<User>> GetAllUsers()
-    {
-        return await _userRepository.GetAllUsersAsync();
-    }
-
+    
     [HttpGet("{id}")]
     public async Task<ActionResult<User>> GetUserById(string id)
     {
@@ -49,7 +44,7 @@ public class UserController : ControllerBase
         try
         {
             await _userRepository.AddUserAsync(user);
-            return Ok(user); // Return the user object as JSON
+            return Ok(user);
         }
         catch (Exception ex)
         {

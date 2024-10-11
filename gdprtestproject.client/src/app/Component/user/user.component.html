@@ -3,11 +3,11 @@
 
   <!-- View Mode -->
   <div *ngIf="!isEditing && userrequest">
-    <p><strong>First Name:</strong> {{ userrequest.FirstName }}</p>
+    <p><strong>First Name :</strong> {{ userrequest.FirstName }}</p>
     <p><strong>Last Name:</strong> {{ userrequest.LastName }}</p>
     <p><strong>Email:</strong> {{ userrequest.Email }}</p>
 
-    <button (click)="toggleEdit()">Test Toggle</button>
+    <button (click)="toggleEdit()">Update</button>
     <button class="btn btn-danger" (click)="deleteProfile()">Delete</button>
   </div>
 
@@ -15,26 +15,26 @@
   <div *ngIf="isEditing && userrequest">
     <form (ngSubmit)="saveProfile()" #form="ngForm">
       <div class="form-group">
-        <label for="FirstName">First Name:</label>
-        <input [(ngModel)]="userrequest.FirstName" name="FirstName" type="text" class="form-control" required />
+        <label for="FirstName" class="pr-10">First Name </label>
+        <input [(ngModel)]="userrequest.FirstName" name="FirstName" type="text" class="form-control pb-10" required />
       </div>
 
       <div class="form-group">
-        <label for="LastName">Last Name:</label>
-        <input [(ngModel)]="userrequest.LastName" name="LastName" type="text" class="form-control" required />
+        <label for="LastName" class="pr-10">Last Name </label>
+        <input [(ngModel)]="userrequest.LastName" name="LastName" type="text" class="form-control pb-10" required />
       </div>
 
       <div class="form-group">
-        <label for="Email">Email:</label>
-        <input [(ngModel)]="userrequest.Email" name="Email" type="email" class="form-control" required />
+        <label for="Email" class="pr-10 pr">Email </label>
+        <input [(ngModel)]="userrequest.Email" name="Email" type="email" class="form-control  pb-10" required />
       </div>
 
       <div class="form-group">
-        <label for="Password">Password:</label>
-        <input [(ngModel)]="userrequest.Password" name="Password" type="password" class="form-control" required />
+        <label for="Password" class="pr-10 pr-20">Password </label>
+        <input [(ngModel)]="userrequest.Password" name="Password" type="password" class="form-control pb-10 " required />
       </div>
 
-      <button type="submit" >Save</button>
+      <button type="submit" class="mr-10">Save</button>
       <button type="button" class="btn btn-secondary" (click)="toggleEdit()">Cancel</button>
     </form>
   </div>

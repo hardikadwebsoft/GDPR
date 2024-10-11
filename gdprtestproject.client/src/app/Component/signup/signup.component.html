@@ -1,10 +1,10 @@
 <div class="signup-container">
-  <form  #form="ngForm" (ngSubmit)="Signup()">
+  <form #form="ngForm" (ngSubmit)="Signup()">
     <h2>Sign Up</h2>
 
     <div class="form-group">
       <label for="FirstName">First Name</label>
-      <input type="text" id="FirstName" [(ngModel)]="SignupRequest.FirstName"  name="FirstName" required />
+      <input type="text" id="FirstName" [(ngModel)]="SignupRequest.FirstName" name="FirstName" required />
     </div>
 
     <div class="form-group">
@@ -28,5 +28,9 @@
     </div>
 
     <button type="submit" [disabled]="!SignupRequest.IsConsent">Sign Up</button>
+    <p class="signup">
+      Already Registered?
+      <a [routerLink]="['/login']">Login</a>
+    </p>
   </form>
 </div>

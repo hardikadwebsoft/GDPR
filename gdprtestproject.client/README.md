@@ -249,8 +249,18 @@ Working:
 
 
 ##Future Improvement
--Email Verification
 -Enhanced GDPR Features : Implement a Data Request Portal where users can request to see all the data that the system has collected about them.
+
+-JWT Tokens: Secure API communication using JWT tokens for authentication and authorization. Store tokens securely in HTTP-only, secure cookies to prevent XSS attacks.
+
+-CORS Configuration: Set up CORS policies to restrict access to the API only from allowed domains.
+
+-Role-Based Access Control (RBAC): Implement RBAC in both the Angular app and the API to control user permissions and access.
+
+-End-to-End Encryption: Consider encrypting sensitive data (e.g., passwords, personal info) on the client side before sending to the server, and decrypting it server-side.
+
+-Content Security Policy (CSP): Implement a strong CSP to mitigate cross-site scripting (XSS) and other attacks.
+
 
 
 
