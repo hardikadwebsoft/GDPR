@@ -34,14 +34,40 @@ namespace newangular.Services.Repository
             await _usersCollection.InsertOneAsync(user);
         }
 
-        public async Task UpdateUserAsync(User user)
+        public async Task UpdateUserAsync(string id, User user)
         {
-            await _usersCollection.ReplaceOneAsync(u => u.Id == user.Id, user);
+            // Retrieve the existing user from the database
+            var existingUser = await _usersCollection.Find(u => u.Id == id).FirstOrDefaultAsync();
+
+            if (existingUser != null)
+            {
+                // Update only the fields that are passed in the user object
+                existingUser.FirstName = user.FirstName ?? existingUser.FirstName;
+                existingUser.LastName = user.LastName ?? existingUser.LastName;
+                existingUser.Email = user.Email ?? existingUser.Email;
+                existingUser.Password = user.Password ?? existingUser.Password;
+                existingUser.IsConsent = user.IsConsent; // Assuming IsConsent will always be provided
+
+                // Replace the updated document in the database
+                await _usersCollection.ReplaceOneAsync(u => u.Id == id, existingUser);
+            }
         }
 
-        public async Task DeleteUserAsync(string id)
+
+        public async Task DeleteUserAsync(string id, User user)
         {
-            await _usersCollection.DeleteOneAsync(user => user.Id == id);
+            var existingUser = await _usersCollection.Find(u => u.Id == id).FirstOrDefaultAsync();
+
+            if (existingUser != null)
+            {
+                existingUser.FirstName = "Deleted";
+                existingUser.LastName = "User";
+                existingUser.Email = "deleted@domain.com";
+                existingUser.Password = null;
+                existingUser.IsConsent = false;
+                
+                await _usersCollection.ReplaceOneAsync(u => u.Id == id, existingUser);
+            }
         }
     }
 }

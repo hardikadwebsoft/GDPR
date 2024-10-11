@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GDPRTestProject.Server")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+038176a0e35069737e3f2bb1f0f1965c0aaa977d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b4bcf14dfed81c9c142bd871280ca9401de189f2")]
 [assembly: System.Reflection.AssemblyProductAttribute("GDPRTestProject.Server")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GDPRTestProject.Server")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

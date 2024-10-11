@@ -29,9 +29,9 @@ public class UserController : ControllerBase
         var user = await _userRepository.GetUserByIdAsync(id);
         if (user == null)
         {
-            return NotFound(); // Returns a 404 Not Found response if the user doesn't exist
+            return NotFound(); 
         }
-        return Ok(user); // Return the Profile object as JSON
+        return Ok(user);
     }
 
 
@@ -40,14 +40,12 @@ public class UserController : ControllerBase
     {
         if (user == null)
         {
-            return BadRequest("User data is required."); // Return a 400 Bad Request if user is null
+            return BadRequest("User data is required.");
         }
-
         if (string.IsNullOrEmpty(user.Id) || !ObjectId.TryParse(user.Id, out _))
         {
-            user.Id = ObjectId.GenerateNewId().ToString(); // Automatically generate new ObjectId if invalid
+            user.Id = ObjectId.GenerateNewId().ToString();
         }
-
         try
         {
             await _userRepository.AddUserAsync(user);
@@ -55,8 +53,7 @@ public class UserController : ControllerBase
         }
         catch (Exception ex)
         {
-            // Log the exception (ex) here if needed
-            return StatusCode(500, "An error occurred while creating the user."); // Return a 500 Internal Server Error
+            return StatusCode(500, "An error occurred while creating the user.");
         }
     }
 
@@ -66,43 +63,22 @@ public class UserController : ControllerBase
         var existingUser = await _userRepository.GetUserByIdAsync(id);
         if (existingUser == null)
         {
-            return NotFound(); // Return 404 if the user does not exist
+            return NotFound();
         }
-
-        // Update the user properties as needed, for example:
-        existingUser.FirstName = user.FirstName;
-        existingUser.LastName = user.LastName;
-        existingUser.Email = user.Email;
-        existingUser.Password = user.Password;
-        existingUser.IsConsent = user.IsConsent;
-
-        await _userRepository.UpdateUserAsync(existingUser); // Update with existingUser instead of user
-
-        return Ok(existingUser); // Return the updated user in JSON format
+        await _userRepository.UpdateUserAsync(id, user);
+        return Ok(existingUser);
     }
 
 
     [HttpPut("Delete/{id}")]
-    public async Task<IActionResult> DeleteUser(string id)
+    public async Task<IActionResult> DeleteUser(string id, User user)
     {
         var existingUser = await _userRepository.GetUserByIdAsync(id);
         if (existingUser == null)
         {
-            return NotFound(); // Return 404 if the user does not exist
+            return NotFound(); 
         }
-
-        existingUser.FirstName = "Deleted";
-        existingUser.LastName = "User";
-        existingUser.Email = "deleted@domain.com";
-        existingUser.Password = null ;
-        existingUser.IsConsent = false;
-
-        await _userRepository.UpdateUserAsync(existingUser); // Update with existingUser instead of user
-
+        await _userRepository.DeleteUserAsync(id, user);
         return Ok(existingUser);
-
     }
-
-    
-
 }
