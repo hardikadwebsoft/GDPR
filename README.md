@@ -46,7 +46,7 @@ This project aims to provide a seamless user experience while prioritizing data 
    - Ensure you are familiar with NgRx, the Angular-specific implementation of Redux, for state management in your application.
 
 4. **Development Environment**
-   - An IDE or code editor such as Visual Studio Code or WebStorm for editing and managing your Angular application.
+   - Use Visual Studio 2022 for developing your Angular and ASP.NET Core application. 
 
 ### Back-End: ASP.NET Web API
 
@@ -150,7 +150,7 @@ This project aims to provide a seamless user experience while prioritizing data 
 
 
 
-## Project Working
+## Project Architecture
 
 This project is divided into five major components, each responsible for handling different aspects of the system. Below is a detailed explanation of each component:
 
