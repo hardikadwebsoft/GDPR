@@ -1,6 +1,9 @@
 <div class="login-container">
   <form #form="ngForm" (ngSubmit)="onLogin()">
     <h2>Login</h2>
+    <div *ngIf="errorMessage" class="error-message clr-red">
+      {{ errorMessage }}
+    </div>
 
     <div class="form-group">
       <label for="Email">Email</label>

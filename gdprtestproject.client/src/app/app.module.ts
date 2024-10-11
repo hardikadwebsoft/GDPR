@@ -23,7 +23,7 @@ import { EffectsModule } from '@ngrx/effects';
   ],
   imports: [
     BrowserModule, HttpClientModule, FormsModule, AppRoutingModule, StoreModule.forRoot({ user: userReducer }),
-    EffectsModule.forRoot([UserEffects]) // Setu
+    EffectsModule.forRoot([UserEffects]) 
   ],
   providers: [],
   bootstrap: [AppComponent]

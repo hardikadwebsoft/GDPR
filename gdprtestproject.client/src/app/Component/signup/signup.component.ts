@@ -20,19 +20,20 @@ export class SignupComponent implements OnInit {
     IsConsent: false,
   };
 
+
   constructor(private usersService: UserService, private router: Router) { }
 
   ngOnInit(): void {
 
   }
   Signup() {
-    debugger;
+
     this.usersService.Signup(this.SignupRequest)
       .subscribe({
       
         next: (response) => {
           console.log('User signed up successfully:', response);
-          this.router.navigate(['user']); // Navigate to the user page on success
+          this.router.navigate(['user']);
         },
         error: (err) => {
           console.error('Error during signup:', err);

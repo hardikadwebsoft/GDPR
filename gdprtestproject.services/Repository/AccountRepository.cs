@@ -21,8 +21,6 @@ namespace newangular.Services.Repository
         }
         public async Task<User> LoginAsync(string email, string password)
         {
-            
-            // Find user by email
             var user = await _usersCollection.Find(u => u.Email == email).FirstOrDefaultAsync();
             password = CommonMethod.HashPassword(password);
             if (user != null && user.Password == password)

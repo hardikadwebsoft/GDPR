@@ -34,7 +34,6 @@ export class UserService {
     return this.http.put<User>(`${this.baseApiUrl}/api/User/${user.id}`, user);
   }
 
-  // NEW: Delete the user profile
   deleteProfile(user: User): Observable<User> {
     debugger;
     return this.http.put<User>(`${this.baseApiUrl}/api/User/delete/${user.id}`,user);

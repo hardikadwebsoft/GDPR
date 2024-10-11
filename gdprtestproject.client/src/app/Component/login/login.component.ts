@@ -20,6 +20,7 @@ export class LoginComponent implements OnInit {
 
   };
 
+  errorMessage: string = ''; 
   constructor(private usersService: UserService, private router: Router) { }
 
   ngOnInit(): void {
@@ -30,12 +31,19 @@ export class LoginComponent implements OnInit {
     this.usersService.onLogin(this.LoginRequest)
       .subscribe({
         next: (response) => {
-          console.log('User signed up successfully:', response);
+          console.log('User logged in successfully:', response);
           const userId = response.id; // Extract the user ID from the response
           this.router.navigate(['/user', userId]); // Navigate to the user page on success
         },
         error: (err) => {
           console.error('Error during login:', err);
+          if (err.status === 401) {
+            this.errorMessage = 'Unauthorized: Invalid email or password.';
+          } else if (err.status === 400) {
+            this.errorMessage = 'Login failed: Please check your inputs.';
+          } else {
+            this.errorMessage = 'An unexpected error occurred. Please try again.';
+          }
         }
       });
   }

@@ -26,19 +26,19 @@ export class UserComponent implements OnInit {
     private usersService: UserService,
     private router: Router,
     private route: ActivatedRoute,
-    private cd: ChangeDetectorRef // Inject ChangeDetectorRef
+    private cd: ChangeDetectorRef
   ) { }
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
       const userId = params['id'];
     // Get user ID from the route
-      console.log('Retrieved user ID from route:', userId); // Log the user ID
+      console.log('Retrieved user ID from route:', userId);
       if (userId) {
       
-        this.getUserProfile(userId); // Call the method with the user ID
+        this.getUserProfile(userId); 
       } else {
-        console.error('No user ID found in route parameters.'); // Log an error if ID is not found
+        console.error('No user ID found in route parameters.'); 
       }
     });
   }
@@ -47,17 +47,16 @@ export class UserComponent implements OnInit {
     this.usersService.getUserById(id).subscribe({
       
       next: (user: any) => {
-        // Manually map camelCase fields to PascalCase fields
         this.userrequest = {
           id: user.id,
-          FirstName: user.firstName, // Map firstName to FirstName
-          LastName: user.lastName,   // Map lastName to LastName
-          Email: user.email,         // Map email to Email
-          Password: user.password,   // Map password to Password
-          IsConsent: user.isConsent  // Map isConsent to IsConsent
+          FirstName: user.firstName, 
+          LastName: user.lastName,   
+          Email: user.email,         
+          Password: user.password,   
+          IsConsent: user.isConsent  
         };
-        console.log('User data:', this.userrequest); // Confirm data here
-         this.cd.detectChanges();  // Log individual properties
+        console.log('User data:', this.userrequest); 
+         this.cd.detectChanges(); 
       },
       error: (err) => {
         console.error('Error fetching user profile:', err);
@@ -92,7 +91,7 @@ export class UserComponent implements OnInit {
       this.usersService.deleteProfile(this.userrequest).subscribe({
         next: () => {
           console.log('Profile deleted successfully');
-          this.router.navigate(['/login']); // Redirect after deletion
+          this.router.navigate(['/login']); 
         },
         error: (err) => {
           console.error('Error deleting profile:', err);

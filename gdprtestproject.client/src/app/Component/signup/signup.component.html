@@ -1,7 +1,6 @@
 <div class="signup-container">
   <form #form="ngForm" (ngSubmit)="Signup()">
     <h2>Sign Up</h2>
-
     <div class="form-group">
       <label for="FirstName">First Name</label>
       <input type="text" id="FirstName" [(ngModel)]="SignupRequest.FirstName" name="FirstName" required />
