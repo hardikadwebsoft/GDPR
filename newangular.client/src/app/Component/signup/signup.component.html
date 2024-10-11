@@ -1,0 +1,32 @@
+<div class="signup-container">
+  <form  #form="ngForm" (ngSubmit)="Signup()">
+    <h2>Sign Up</h2>
+
+    <div class="form-group">
+      <label for="FirstName">First Name</label>
+      <input type="text" id="FirstName" [(ngModel)]="SignupRequest.FirstName"  name="FirstName" required />
+    </div>
+
+    <div class="form-group">
+      <label for="LastName">Last Name</label>
+      <input type="text" id="LastName" [(ngModel)]="SignupRequest.LastName" name="LastName" required />
+    </div>
+
+    <div class="form-group">
+      <label for="Email">Email</label>
+      <input type="email" id="Email" [(ngModel)]="SignupRequest.Email" name="Email" required />
+    </div>
+
+    <div class="form-group">
+      <label for="Password">Password</label>
+      <input type="password" id="Password" [(ngModel)]="SignupRequest.Password" name="Password" required />
+    </div>
+
+    <div class="form-group gdpr-consent">
+      <input type="checkbox" id="IsConsent" [(ngModel)]="SignupRequest.IsConsent" name="IsConsent" required />
+      <label for="IsConsent">I consent to the processing of my personal data.</label>
+    </div>
+
+    <button type="submit" [disabled]="!SignupRequest.IsConsent">Sign Up</button>
+  </form>
+</div>

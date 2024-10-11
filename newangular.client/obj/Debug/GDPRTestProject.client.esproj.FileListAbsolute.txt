@@ -1,0 +1,2 @@
+D:\hiral\NewAngular\newangular.client\obj\Debug\GDPRTestProject.client.esproj.CoreCompileInputs.cache
+D:\hiral\TestGDPR\newangular.client\obj\Debug\GDPRTestProject.client.esproj.CoreCompileInputs.cache

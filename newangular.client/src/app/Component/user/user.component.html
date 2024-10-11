@@ -1,0 +1,41 @@
+<div class="profile-container">
+  <h2>User Profile</h2>
+
+  <!-- View Mode -->
+  <div *ngIf="!isEditing && userrequest">
+    <p><strong>First Name:</strong> {{ userrequest.FirstName }}</p>
+    <p><strong>Last Name:</strong> {{ userrequest.LastName }}</p>
+    <p><strong>Email:</strong> {{ userrequest.Email }}</p>
+
+    <button (click)="toggleEdit()">Test Toggle</button>
+    <button class="btn btn-danger" (click)="deleteProfile()">Delete</button>
+  </div>
+
+  <!-- Edit Mode -->
+  <div *ngIf="isEditing && userrequest">
+    <form (ngSubmit)="saveProfile()" #form="ngForm">
+      <div class="form-group">
+        <label for="FirstName">First Name:</label>
+        <input [(ngModel)]="userrequest.FirstName" name="FirstName" type="text" class="form-control" required />
+      </div>
+
+      <div class="form-group">
+        <label for="LastName">Last Name:</label>
+        <input [(ngModel)]="userrequest.LastName" name="LastName" type="text" class="form-control" required />
+      </div>
+
+      <div class="form-group">
+        <label for="Email">Email:</label>
+        <input [(ngModel)]="userrequest.Email" name="Email" type="email" class="form-control" required />
+      </div>
+
+      <div class="form-group">
+        <label for="Password">Password:</label>
+        <input [(ngModel)]="userrequest.Password" name="Password" type="password" class="form-control" required />
+      </div>
+
+      <button type="submit" >Save</button>
+      <button type="button" class="btn btn-secondary" (click)="toggleEdit()">Cancel</button>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,28 @@
+<div class="login-container">
+  <form #form="ngForm" (ngSubmit)="onLogin()">
+    <h2>Login</h2>
+
+    <div class="form-group">
+      <label for="Email">Email</label>
+      <input type="Email" id="Email" name="Email" [(ngModel)]="LoginRequest.Email" required />
+    </div>
+
+    <div class="form-group">
+      <label for="Password">Password </label>
+      <input type="Password" id="Password" name="Password" [(ngModel)]="LoginRequest.Password" required />
+    </div>
+
+    <div class="form-group gdpr-consent">
+      <input type="checkbox" id="IsConsent" name="IsConsent" [(ngModel)]="LoginRequest.IsConsent" required />
+      <label for="IsConsent">
+        I consent to the processing of my personal data in accordance with the <a href="/privacy-policy" target="_blank">Privacy Policy</a> and <a href="/terms-of-service" target="_blank">Terms of Service</a>.
+      </label>
+    </div>
+     
+    <button type="submit" [disabled]="!LoginRequest.IsConsent">Login</button>
+  </form>
+
+  <p class="privacy-note">
+    By logging in, you agree to our <a href="/privacy-policy" target="_blank">Privacy Policy</a> and <a href="/terms-of-service" target="_blank">Terms of Service</a>.
+  </p>
+</div>
