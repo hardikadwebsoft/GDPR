@@ -25,7 +25,7 @@ export class UserService {
   }
 
   getUserById(id: string): Observable<User> {
-    const token = localStorage.getItem('jwt_token');
+    const token = sessionStorage.getItem('jwt_token');
     if (!token) {
       console.error('No token found');
       return new Observable(); 
@@ -38,7 +38,7 @@ export class UserService {
 
   updateProfile(user: User): Observable<User> {
     debugger;
-    const token = localStorage.getItem('jwt_token'); // Get the token from localStorage
+    const token = sessionStorage.getItem('jwt_token'); // Get the token from localStorage
 
     // Ensure token exists before making the request
     if (!token) {
@@ -57,7 +57,7 @@ export class UserService {
 
   deleteProfile(user: User): Observable<User> {
     debugger;
-    const token = localStorage.getItem('jwt_token'); // Get the token from local storage
+    const token = sessionStorage.getItem('jwt_token'); // Get the token from local storage
     console.log('Token:', token); // Log the token to see if it's present
 
     const headers = new HttpHeaders({
