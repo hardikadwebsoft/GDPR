@@ -20,24 +20,26 @@ export class SignupComponent implements OnInit {
     IsConsent: false,
   };
 
-
   constructor(private usersService: UserService, private router: Router) { }
 
   ngOnInit(): void {
 
   }
   Signup() {
-
-    this.usersService.Signup(this.SignupRequest)
-      .subscribe({
-      
-        next: (response) => {
-          console.log('User signed up successfully:', response);
-          this.router.navigate(['user']);
-        },
-        error: (err) => {
-          console.error('Error during signup:', err);
-        }
-      });
+    if (this.SignupRequest.IsConsent) {
+      this.usersService.Signup(this.SignupRequest)
+        .subscribe({
+          next: (response) => {
+            console.log('User signed up successfully:', response);
+            this.router.navigate(['user']);
+          },
+          error: (err) => {
+            console.error('Error during signup:', err);
+          }
+        });
+    } else {
+      console.error('Form is invalid or consent not given');
+    }
   }
+
 }

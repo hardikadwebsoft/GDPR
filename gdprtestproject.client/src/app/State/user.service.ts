@@ -15,7 +15,6 @@ export class UserService {
   constructor(private http: HttpClient) { }
 
   Signup(SignupRequest: User): Observable<User> {
-    debugger;
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
     return this.http.post<User>(this.baseApiUrl + '/api/User/Signup', SignupRequest, { headers });
   }
@@ -35,7 +34,6 @@ export class UserService {
   }
 
   deleteProfile(user: User): Observable<User> {
-    debugger;
     return this.http.put<User>(`${this.baseApiUrl}/api/User/delete/${user.id}`,user);
   }
 

@@ -11,6 +11,10 @@
   text-align: center;
 }
 
+.clr-red {
+  color: red;
+}
+
 h2 {
   text-align: center;
   margin-bottom: 20px;

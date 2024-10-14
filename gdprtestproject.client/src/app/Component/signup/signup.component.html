@@ -1,32 +1,49 @@
 <div class="signup-container">
-  <form #form="ngForm" (ngSubmit)="Signup()">
+  <form #form="ngForm" (ngSubmit)="Signup()" novalidate>
     <h2>Sign Up</h2>
+
     <div class="form-group">
       <label for="FirstName">First Name</label>
-      <input type="text" id="FirstName" [(ngModel)]="SignupRequest.FirstName" name="FirstName" required />
+      <input type="text" id="FirstName" [(ngModel)]="SignupRequest.FirstName" name="FirstName" required #FirstName="ngModel" />
+      <div *ngIf="FirstName.invalid && FirstName.touched" class="text-danger clr-red">
+        First Name is required.
+      </div>
     </div>
 
     <div class="form-group">
       <label for="LastName">Last Name</label>
-      <input type="text" id="LastName" [(ngModel)]="SignupRequest.LastName" name="LastName" required />
+      <input type="text" id="LastName" [(ngModel)]="SignupRequest.LastName" name="LastName" required #LastName="ngModel" />
+      <div *ngIf="LastName.invalid && LastName.touched" class="text-danger clr-red">
+        Last Name is required.
+      </div>
     </div>
 
     <div class="form-group">
       <label for="Email">Email</label>
-      <input type="email" id="Email" [(ngModel)]="SignupRequest.Email" name="Email" required />
+      <input type="email" id="Email" [(ngModel)]="SignupRequest.Email" name="Email" required #Email="ngModel" email />
+      <div *ngIf="Email.invalid && Email.touched" class="text-danger clr-red">
+        Valid Email is required.
+      </div>
     </div>
 
     <div class="form-group">
       <label for="Password">Password</label>
-      <input type="password" id="Password" [(ngModel)]="SignupRequest.Password" name="Password" required />
+      <input type="password" id="Password" [(ngModel)]="SignupRequest.Password" name="Password" required #Password="ngModel" />
+      <div *ngIf="Password.invalid && Password.touched" class="text-danger clr-red">
+        Password is required.
+      </div>
     </div>
 
     <div class="form-group gdpr-consent">
-      <input type="checkbox" id="IsConsent" [(ngModel)]="SignupRequest.IsConsent" name="IsConsent" required />
+      <input type="checkbox" id="IsConsent" [(ngModel)]="SignupRequest.IsConsent" name="IsConsent" required #IsConsent="ngModel" />
       <label for="IsConsent">I consent to the processing of my personal data.</label>
+      <div *ngIf="IsConsent.invalid && IsConsent.touched" class="text-danger clr-red">
+        You must give consent.
+      </div>
     </div>
 
-    <button type="submit" [disabled]="!SignupRequest.IsConsent">Sign Up</button>
+    <button type="submit" [disabled]="form.invalid">Sign Up</button>
+
     <p class="signup">
       Already Registered?
       <a [routerLink]="['/login']">Login</a>
