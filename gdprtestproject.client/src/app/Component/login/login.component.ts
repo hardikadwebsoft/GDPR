@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Route, Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { UserService } from 'src/app/State/user.service';
-import { Login } from '../../State/user.model';
+import { Login, LoginResponse } from '../../State/user.model';
 
 
 @Component({
@@ -17,23 +17,31 @@ export class LoginComponent implements OnInit {
     Email: '',
     Password: '',
     IsConsent : false
-
   };
 
   errorMessage: string = ''; 
   constructor(private usersService: UserService, private router: Router) { }
 
   ngOnInit(): void {
-
   }
 
   onLogin() {
     this.usersService.onLogin(this.LoginRequest)
       .subscribe({
-        next: (response) => {
+        next: (response: LoginResponse) => {
           console.log('User logged in successfully:', response);
-          const userId = response.id; // Extract the user ID from the response
-          this.router.navigate(['/user', userId]); // Navigate to the user page on success
+          const token = response.token; // Access token correctly
+          const userId = response.user.id;
+          if (token) {
+            sessionStorage.setItem('jwt_token', token);
+          } else {
+            console.error('No token received from login response');
+            this.errorMessage = 'Login failed: No token received.';
+            return;
+          }
+
+          // Navigate to the user page on success
+          this.router.navigate(['/user', userId]);
         },
         error: (err) => {
           console.error('Error during login:', err);
@@ -47,6 +55,7 @@ export class LoginComponent implements OnInit {
         }
       });
   }
+
 }
 
 

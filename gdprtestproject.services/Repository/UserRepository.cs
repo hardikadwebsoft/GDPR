@@ -31,24 +31,31 @@ namespace newangular.Services.Repository
         public async Task UpdateUserAsync(string id, User user)
         {
             var existingUser = await _usersCollection.Find(u => u.Id == id).FirstOrDefaultAsync();
-           
+
             if (existingUser != null)
             {
                 existingUser.FirstName = user.FirstName ?? existingUser.FirstName;
                 existingUser.LastName = user.LastName ?? existingUser.LastName;
-                existingUser.Email = user.Email ?? existingUser.Email;               
+                existingUser.Email = user.Email ?? existingUser.Email;
                 existingUser.IsConsent = user.IsConsent;
-
-                if (!string.IsNullOrEmpty(user.Password))
+                if (existingUser.Password != user.Password)
                 {
-                    existingUser.Password = CommonMethod.HashPassword(user.Password);
+                    if (!string.IsNullOrEmpty(user.Password))
+                    {
+                        existingUser.Password = CommonMethod.HashPassword(user.Password);
+                    }
                 }
-               
+                else
+                {
+                    existingUser.Password = user.Password;
+
+                }
+
                 await _usersCollection.ReplaceOneAsync(u => u.Id == id, existingUser);
             }
         }
 
-       
+
         public async Task DeleteUserAsync(string id, User user)
         {
             var existingUser = await _usersCollection.Find(u => u.Id == id).FirstOrDefaultAsync();

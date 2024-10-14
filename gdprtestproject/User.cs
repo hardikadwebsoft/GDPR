@@ -22,11 +22,9 @@ namespace NewAngular.Server.Model
         [BsonElement("Password"),BsonRepresentation(BsonType.String)]
         public string? Password { get; set; }
 
-
-
         [BsonElement("IsConsent")]
         [BsonRepresentation(BsonType.Boolean)]
-        public bool IsConsent { get; set; } = true;
+        public bool IsConsent { get; set; }
 
 
     }

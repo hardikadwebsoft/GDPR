@@ -1,4 +1,3 @@
-
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
@@ -24,12 +23,32 @@ builder.Services.AddSingleton<IMongoClient>(s =>
 
 // Register MongoDbService
 builder.Services.AddSingleton<MongoDbService>();
+
 // Register your repositories
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IAccountRepository, AccountRepository>();
-//Add other services
-builder.Services.AddControllersWithViews();
 
+// Add JWT Authentication configuration
+builder.Services.AddAuthentication(options =>
+{
+    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+})
+.AddJwtBearer(options =>
+{
+    options.TokenValidationParameters = new TokenValidationParameters
+    {
+        ValidateIssuer = true,
+        ValidateAudience = true,
+        ValidateLifetime = true,
+        ValidateIssuerSigningKey = true,
+        ValidIssuer = builder.Configuration["Jwt:Issuer"],
+        ValidAudience = builder.Configuration["Jwt:Audience"],
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]))
+    };
+});
+
+// Add CORS policy
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAll",
@@ -41,7 +60,11 @@ builder.Services.AddCors(options =>
         });
 });
 
+// Add other services
+builder.Services.AddControllersWithViews();
+
 var app = builder.Build();
+
 app.UseCors("AllowAll");
 app.UseDefaultFiles();
 app.UseStaticFiles();
@@ -56,8 +79,8 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.UseAuthentication(); // Enable authentication
 app.UseAuthorization(); // Enable authorization
-app.MapControllers();
 
+app.MapControllers();
 app.MapFallbackToFile("/index.html");
 
 app.Run();

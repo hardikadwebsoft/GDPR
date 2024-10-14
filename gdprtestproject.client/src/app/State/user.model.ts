@@ -1,4 +1,3 @@
-// src/app/state/user.model.ts
 export interface User {
   id: string;
   FirstName: string;
@@ -28,4 +27,15 @@ export interface UserState {
   user: User | null;
   loading: boolean;
   error: string | null;
+}
+export interface LoginResponse {
+  token: string;
+  user: {
+    id: string;
+    firstName: string;
+    lastName: string;
+    email: string;
+    password: string;
+    isConsent: boolean;
+  };
 }

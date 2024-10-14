@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using MongoDB.Bson;
 using static System.Runtime.InteropServices.JavaScript.JSType;
+using Microsoft.AspNetCore.Authorization;
 
 [ApiController]
 [Route("api/[controller]")]
@@ -19,6 +20,7 @@ public class UserController : ControllerBase
 
     
     [HttpGet("{id}")]
+    [Authorize]
     public async Task<ActionResult<User>> GetUserById(string id)
     {
         var user = await _userRepository.GetUserByIdAsync(id);
@@ -52,7 +54,8 @@ public class UserController : ControllerBase
         }
     }
 
-    [HttpPut("{id}")]
+    [HttpPut("Update/{id}")]
+    [Authorize]
     public async Task<IActionResult> UpdateUser(string id, User user)
     {
         var existingUser = await _userRepository.GetUserByIdAsync(id);
@@ -66,6 +69,7 @@ public class UserController : ControllerBase
 
 
     [HttpPut("Delete/{id}")]
+    [Authorize]
     public async Task<IActionResult> DeleteUser(string id, User user)
     {
         var existingUser = await _userRepository.GetUserByIdAsync(id);
